@@ -1,0 +1,22 @@
+PS C:\Users\KUŞOĞLU\Desktop\allocation-project\AllocationAlgorithms> dotnet run
+Initial free list:
+[0, 100]
+
+BestFit allocate 10 -> start=0
+[10, 90]
+
+WorstFit allocate 20 -> start=10
+[30, 70]
+
+NextFit allocate 5 -> start=30
+[35, 65]
+
+Free block [0,10] (merge may or may not happen yet):
+[0, 10] -> [35, 65]
+
+Free block [10,20] (NOW it should merge with [0,10] into [0,30]):
+[0, 30] -> [35, 65]
+
+Free block [30,5] (merges again, expected [0,35] -> [35,65]):
+[0, 100]
+PS C:\Users\KUŞOĞLU\Desktop\allocation-project\AllocationAlgorithms>

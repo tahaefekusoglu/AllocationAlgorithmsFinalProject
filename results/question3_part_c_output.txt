@@ -1,0 +1,246 @@
+Code output:
+
+PS C:\Users\KUŞOĞLU\Desktop\allocation-project\AllocationAlgorithms> dotnet run
+====================================================
+Question 3 - Part C | Experiment 1: Allocation Trace
+====================================================
+Fixed sequence: 10, 5, 20, -5, 12, -10, 8, 6, 7, 3, 10
+
+--- Step 1: Request = 10 ---
+Best Fit: allocate 10 -> start=0
+Best Fit Free List: [10, 90]
+Worst Fit: allocate 10 -> start=0
+Worst Fit Free List: [10, 90]
+Next Fit: allocate 10 -> start=0
+Next Fit Free List: [10, 90]
+
+--- Step 2: Request = 5 ---
+Best Fit: allocate 5 -> start=10
+Best Fit Free List: [15, 85]
+Worst Fit: allocate 5 -> start=10
+Worst Fit Free List: [15, 85]
+Next Fit: allocate 5 -> start=10
+Next Fit Free List: [15, 85]
+
+--- Step 3: Request = 20 ---
+Best Fit: allocate 20 -> start=15
+Best Fit Free List: [35, 65]
+Worst Fit: allocate 20 -> start=15
+Worst Fit Free List: [35, 65]
+Next Fit: allocate 20 -> start=15
+Next Fit Free List: [35, 65]
+
+--- Step 4: Request = -5 ---
+Best Fit: free 5 -> start=10
+Best Fit Free List: [10, 5] -> [35, 65]
+Worst Fit: free 5 -> start=10
+Worst Fit Free List: [10, 5] -> [35, 65]
+Next Fit: free 5 -> start=10
+Next Fit Free List: [10, 5] -> [35, 65]
+
+--- Step 5: Request = 12 ---
+Best Fit: allocate 12 -> start=35
+Best Fit Free List: [10, 5] -> [47, 53]
+Worst Fit: allocate 12 -> start=35
+Worst Fit Free List: [10, 5] -> [47, 53]
+Next Fit: allocate 12 -> start=35
+Next Fit Free List: [10, 5] -> [47, 53]
+
+--- Step 6: Request = -10 ---
+Best Fit: free 10 -> start=0
+Best Fit Free List: [0, 15] -> [47, 53]
+Worst Fit: free 10 -> start=0
+Worst Fit Free List: [0, 15] -> [47, 53]
+Next Fit: free 10 -> start=0
+Next Fit Free List: [0, 15] -> [47, 53]
+
+--- Step 7: Request = 8 ---
+Best Fit: allocate 8 -> start=0
+Best Fit Free List: [8, 7] -> [47, 53]
+Worst Fit: allocate 8 -> start=47
+Worst Fit Free List: [0, 15] -> [55, 45]
+Next Fit: allocate 8 -> start=47
+Next Fit Free List: [0, 15] -> [55, 45]
+
+--- Step 8: Request = 6 ---
+Best Fit: allocate 6 -> start=8
+Best Fit Free List: [14, 1] -> [47, 53]
+Worst Fit: allocate 6 -> start=55
+Worst Fit Free List: [0, 15] -> [61, 39]
+Next Fit: allocate 6 -> start=55
+Next Fit Free List: [0, 15] -> [61, 39]
+
+--- Step 9: Request = 7 ---
+Best Fit: allocate 7 -> start=47
+Best Fit Free List: [14, 1] -> [54, 46]
+Worst Fit: allocate 7 -> start=61
+Worst Fit Free List: [0, 15] -> [68, 32]
+Next Fit: allocate 7 -> start=61
+Next Fit Free List: [0, 15] -> [68, 32]
+
+--- Step 10: Request = 3 ---
+Best Fit: allocate 3 -> start=54
+Best Fit Free List: [14, 1] -> [57, 43]
+Worst Fit: allocate 3 -> start=68
+Worst Fit Free List: [0, 15] -> [71, 29]
+Next Fit: allocate 3 -> start=68
+Next Fit Free List: [0, 15] -> [71, 29]
+
+--- Step 11: Request = 10 ---
+Best Fit: allocate 10 -> start=57
+Next Fit Free List: [0, 15] -> [68, 32]
+
+--- Step 10: Request = 3 ---
+Best Fit: allocate 3 -> start=54
+Best Fit Free List: [14, 1] -> [57, 43]
+Worst Fit: allocate 3 -> start=68
+Worst Fit Free List: [0, 15] -> [71, 29]
+Next Fit: allocate 3 -> start=68
+Next Fit Free List: [0, 15] -> [71, 29]
+
+--- Step 11: Request = 10 ---
+Next Fit Free List: [0, 15] -> [68, 32]
+
+--- Step 10: Request = 3 ---
+Best Fit: allocate 3 -> start=54
+Best Fit Free List: [14, 1] -> [57, 43]
+Worst Fit: allocate 3 -> start=68
+Worst Fit Free List: [0, 15] -> [71, 29]
+Next Fit: allocate 3 -> start=68
+Next Fit Free List: [0, 15] -> [71, 29]
+
+Next Fit Free List: [0, 15] -> [68, 32]
+
+--- Step 10: Request = 3 ---
+Best Fit: allocate 3 -> start=54
+Best Fit Free List: [14, 1] -> [57, 43]
+Worst Fit: allocate 3 -> start=68
+Worst Fit Free List: [0, 15] -> [71, 29]
+Next Fit: allocate 3 -> start=68
+Next Fit Free List: [0, 15] -> [68, 32]
+
+--- Step 10: Request = 3 ---
+Best Fit: allocate 3 -> start=54
+Best Fit Free List: [14, 1] -> [57, 43]
+Worst Fit: allocate 3 -> start=68
+Worst Fit Free List: [0, 15] -> [71, 29]
+Next Fit Free List: [0, 15] -> [68, 32]
+
+--- Step 10: Request = 3 ---
+Best Fit: allocate 3 -> start=54
+Best Fit Free List: [14, 1] -> [57, 43]
+Worst Fit: allocate 3 -> start=68
+Worst Fit Free List: [0, 15] -> [71, 29]
+Next Fit Free List: [0, 15] -> [68, 32]
+
+--- Step 10: Request = 3 ---
+Best Fit: allocate 3 -> start=54
+Best Fit Free List: [14, 1] -> [57, 43]
+Worst Fit: allocate 3 -> start=68
+Worst Fit Free List: [0, 15] -> [71, 29]
+Next Fit: allocate 3 -> start=68
+Next Fit Free List: [0, 15] -> [68, 32]
+
+--- Step 10: Request = 3 ---
+Best Fit: allocate 3 -> start=54
+Best Fit Free List: [14, 1] -> [57, 43]
+Worst Fit: allocate 3 -> start=68
+Worst Fit Free List: [0, 15] -> [71, 29]
+Next Fit: allocate 3 -> start=68
+Next Fit Free List: [0, 15] -> [68, 32]
+
+--- Step 10: Request = 3 ---
+Best Fit: allocate 3 -> start=54
+Best Fit Free List: [14, 1] -> [57, 43]
+Next Fit Free List: [0, 15] -> [68, 32]
+
+--- Step 10: Request = 3 ---
+Best Fit: allocate 3 -> start=54
+Best Fit Free List: [14, 1] -> [57, 43]
+Worst Fit: allocate 3 -> start=68
+Worst Fit Free List: [0, 15] -> [71, 29]
+Next Fit: allocate 3 -> start=68
+Next Fit Free List: [0, 15] -> [68, 32]
+
+--- Step 10: Request = 3 ---
+Best Fit: allocate 3 -> start=54
+Best Fit Free List: [14, 1] -> [57, 43]
+Worst Fit: allocate 3 -> start=68
+Worst Fit Free List: [0, 15] -> [71, 29]
+Next Fit: allocate 3 -> start=68
+Next Fit Free List: [0, 15] -> [71, 29]
+Next Fit Free List: [0, 15] -> [68, 32]
+
+--- Step 10: Request = 3 ---
+Best Fit: allocate 3 -> start=54
+Best Fit Free List: [14, 1] -> [57, 43]
+Worst Fit: allocate 3 -> start=68
+Worst Fit Free List: [0, 15] -> [71, 29]
+Next Fit: allocate 3 -> start=68
+Next Fit Free List: [0, 15] -> [71, 29]
+
+Next Fit Free List: [0, 15] -> [68, 32]
+
+--- Step 10: Request = 3 ---
+Best Fit: allocate 3 -> start=54
+Best Fit Free List: [14, 1] -> [57, 43]
+Worst Fit: allocate 3 -> start=68
+Worst Fit Free List: [0, 15] -> [71, 29]
+Next Fit: allocate 3 -> start=68
+Next Fit Free List: [0, 15] -> [68, 32]
+
+--- Step 10: Request = 3 ---
+Best Fit: allocate 3 -> start=54
+Best Fit Free List: [14, 1] -> [57, 43]
+Next Fit Free List: [0, 15] -> [68, 32]
+
+--- Step 10: Request = 3 ---
+Best Fit: allocate 3 -> start=54
+Best Fit Free List: [14, 1] -> [57, 43]
+Worst Fit: allocate 3 -> start=68
+Worst Fit Free List: [0, 15] -> [71, 29]
+Best Fit: allocate 3 -> start=54
+Best Fit Free List: [14, 1] -> [57, 43]
+Worst Fit: allocate 3 -> start=68
+Worst Fit Free List: [0, 15] -> [71, 29]
+Next Fit: allocate 3 -> start=68
+Best Fit Free List: [14, 1] -> [57, 43]
+Worst Fit: allocate 3 -> start=68
+Worst Fit Free List: [0, 15] -> [71, 29]
+Next Fit: allocate 3 -> start=68
+Next Fit Free List: [0, 15] -> [71, 29]
+
+Worst Fit: allocate 3 -> start=68
+Worst Fit Free List: [0, 15] -> [71, 29]
+Next Fit: allocate 3 -> start=68
+Next Fit Free List: [0, 15] -> [71, 29]
+
+--- Step 11: Request = 10 ---
+Next Fit: allocate 3 -> start=68
+Next Fit Free List: [0, 15] -> [71, 29]
+
+--- Step 11: Request = 10 ---
+Best Fit: allocate 10 -> start=57
+Next Fit Free List: [0, 15] -> [71, 29]
+
+--- Step 11: Request = 10 ---
+Best Fit: allocate 10 -> start=57
+Best Fit Free List: [14, 1] -> [67, 33]
+--- Step 11: Request = 10 ---
+Best Fit: allocate 10 -> start=57
+Best Fit Free List: [14, 1] -> [67, 33]
+Worst Fit: allocate 10 -> start=71
+Worst Fit Free List: [0, 15] -> [81, 19]
+Best Fit Free List: [14, 1] -> [67, 33]
+Worst Fit: allocate 10 -> start=71
+Worst Fit Free List: [0, 15] -> [81, 19]
+Next Fit: allocate 10 -> start=71
+Worst Fit: allocate 10 -> start=71
+Worst Fit Free List: [0, 15] -> [81, 19]
+Next Fit: allocate 10 -> start=71
+Worst Fit Free List: [0, 15] -> [81, 19]
+Next Fit: allocate 10 -> start=71
+Next Fit: allocate 10 -> start=71
+Next Fit Free List: [0, 15] -> [81, 19]
+
+PS C:\Users\KUŞOĞLU\Desktop\allocation-project\AllocationAlgorithms>

@@ -1,0 +1,115 @@
+Code output:
+
+PS C:\Users\KUŞOĞLU\Desktop\allocation-project\AllocationAlgorithms>      
+PS C:\Users\KUŞOĞLU\Desktop\allocation-project\AllocationAlgorithms> dotnet run
+====================================================
+Question 3 - Part D | Experiment 2: Fragmentation Test
+====================================================
+Seed used for allocation sizes: 2025
+Seed used for freeing blocks: 777
+
+Random allocation sizes (12 allocations, size range 3–12):
+9, 12, 5, 10, 7, 5, 5, 6, 8, 12, 4, 7
+
+----------------------------------------------------
+---- Best Fit ----
+----------------------------------------------------
+Allocate 9 -> start=0
+Allocate 12 -> start=9
+Allocate 5 -> start=21
+Allocate 10 -> start=26
+Allocate 7 -> start=36
+Allocate 5 -> start=43
+Allocate 5 -> start=48
+Allocate 6 -> start=53
+Allocate 8 -> start=59
+Allocate 12 -> start=67
+Allocate 4 -> start=79
+Allocate 7 -> start=83
+
+Free List after 12 allocations:
+[90, 10]
+
+Freed allocation indexes (4): 7, 9, 10, 4
+
+Free block [53,6]
+Free block [67,12]
+Free block [79,4]
+Free block [36,7]
+
+Free List after freeing blocks (merge applied):
+[36, 7] -> [53, 6] -> [67, 16] -> [90, 10]
+
+Allocate size 25: FAILED
+
+Final Free List:
+[36, 7] -> [53, 6] -> [67, 16] -> [90, 10]
+
+----------------------------------------------------
+---- Worst Fit ----
+----------------------------------------------------
+Allocate 9 -> start=0
+Allocate 12 -> start=9
+Allocate 5 -> start=21
+Allocate 10 -> start=26
+Allocate 7 -> start=36
+Allocate 5 -> start=43
+Allocate 5 -> start=48
+Allocate 6 -> start=53
+Allocate 8 -> start=59
+Allocate 12 -> start=67
+Allocate 4 -> start=79
+Allocate 7 -> start=83
+
+Free List after 12 allocations:
+[90, 10]
+
+Freed allocation indexes (4): 7, 9, 10, 4
+
+Free block [53,6]
+Free block [67,12]
+Free block [79,4]
+Free block [36,7]
+
+Free List after freeing blocks (merge applied):
+[36, 7] -> [53, 6] -> [67, 16] -> [90, 10]
+
+Allocate size 25: FAILED
+
+Final Free List:
+[36, 7] -> [53, 6] -> [67, 16] -> [90, 10]
+
+----------------------------------------------------
+---- Next Fit ----
+----------------------------------------------------
+Allocate 9 -> start=0
+Allocate 12 -> start=9
+Allocate 5 -> start=21
+Allocate 10 -> start=26
+Allocate 7 -> start=36
+Allocate 5 -> start=43
+Allocate 5 -> start=48
+Allocate 6 -> start=53
+Allocate 8 -> start=59
+Allocate 12 -> start=67
+Allocate 4 -> start=79
+Allocate 7 -> start=83
+
+Free List after 12 allocations:
+[90, 10]
+
+Freed allocation indexes (4): 7, 9, 10, 4
+
+Free block [53,6]
+Free block [67,12]
+Free block [79,4]
+Free block [36,7]
+
+Free List after freeing blocks (merge applied):
+[36, 7] -> [53, 6] -> [67, 16] -> [90, 10]
+
+Allocate size 25: FAILED
+
+Final Free List:
+[36, 7] -> [53, 6] -> [67, 16] -> [90, 10]
+PS C:\Users\KUŞOĞLU\Desktop\allocation-project\AllocationAlgorithms>

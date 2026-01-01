@@ -1,0 +1,46 @@
+Code output:
+PS C:\Users\KUŞOĞLU\Desktop\allocation-project\AllocationAlgorithms> dotnet clean
+>> dotnet build
+>> dotnet run
+>> 
+
+
+
+====================================================
+Question 3 - Part E | Experiment 3: Speed Test
+====================================================
+Memory size: 100
+Iterations: 200
+Allocation size range: 1–10
+Seed: 2026
+
+----------------------------------------------------
+---- Best Fit ----
+----------------------------------------------------
+Completed: 200 iterations (allocate + free each loop)
+Elapsed: 0 ms (0,000585 s)
+
+----------------------------------------------------
+---- Worst Fit ----
+----------------------------------------------------
+Completed: 200 iterations (allocate + free each loop)
+Elapsed: 0 ms (0,000135 s)
+
+----------------------------------------------------
+---- Next Fit ----
+----------------------------------------------------
+Completed: 200 iterations (allocate + free each loop)
+Elapsed: 0 ms (0,000127 s)
+
+----------------------------------------------------
+--- SPEED RESULTS (Total time for 200 iterations) ---
+Best Fit :  0 ms (0,000585 s)
+Worst Fit:  0 ms (0,000135 s)
+Next Fit :  0 ms (0,000127 s)
+
+Fastest: Next Fit
+Slowest: Best Fit
+
+Note: Small timing differences are normal on PCs (background processes etc.).
+The main reason for speed differences is how much of the linked list each algorithm scans.
+PS C:\Users\KUŞOĞLU\Desktop\allocation-project\AllocationAlgorithms>
