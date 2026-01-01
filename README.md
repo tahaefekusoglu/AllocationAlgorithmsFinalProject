@@ -1,142 +1,176 @@
-# Memory Allocation Algorithms – Final Project
+# Allocation Algorithms – Final Project (C# Console)
 
-This repository contains the implementation and experimental evaluation of classic
-memory allocation algorithms using linked lists and bitmaps.
+This repository contains my final project implementation and experiments for **disk/memory allocation algorithms**.
 
-The project was prepared as part of the final assignment and includes both
-AI-generated baseline implementations and rewritten, manually modified versions
-to demonstrate understanding of the algorithms.
+It includes:
 
----
-
-## 📁 Project Structure
-
-AllocationAlgorithms/
-│
-├── Bitmap/
-│ ├── BitmapAllocator_AI.cs
-│ └── BitmapAllocator_Rewritten.cs
-│
-├── LinkedList/
-│ ├── LinkedListAllocator_AI.cs
-│ └── LinkedListAllocator_Rewritten.cs
-│
-├── results/
-│ ├── part_b_output.txt
-│ ├── part_c_output.txt
-│ ├── part_d_output.txt
-│ └── part_e_output.txt
-│
-├── Program.cs
-├── AllocationAlgorithms.csproj
-└── README.md
-
-
+- **Question 2:** Bitmap vs Linked-List allocation  
+  (AI version vs Rewritten version — 4 versions total)
+- **Question 3:** Linked-list free-list allocator experiments  
+  (**Best Fit, Worst Fit, Next Fit**)  
+  Parts **B / C / D / E** are runnable from a menu.
 
 ---
 
-## 🧠 Implemented Algorithms
-
-The following memory allocation strategies are implemented and tested:
-
-- Best Fit  
-- Worst Fit  
-- Next Fit  
-
-Each algorithm operates on a linked list of free memory segments of the form:
-[start, length].
-
-Bitmap-based allocation is also included for comparison (Question 2).
-
----
-
-## 📄 Important Note About Program.cs
-
-Program.cs intentionally contains code for multiple questions and experiments
-inside the same file.
-
-Each part (Question 2, Question 3 Part B/C/D/E) is clearly separated using
-large comment blocks.
-
-Only **one experiment is active at a time**.
-Other parts are commented out so the instructor can easily inspect or run
-any section if needed.
-
-To run a specific part:
-- Comment out other sections
-- Leave only the desired section active
-- Run the program normally
-
----
-
-## ▶️ How to Run the Project
+##  How to Run (Instructor)
 
 ### Requirements
-- .NET SDK (8.0 or later)
+- .NET SDK (recommended: .NET 6/7/8)
+- Run from the project folder that contains `AllocationAlgorithms.csproj`
 
-### Commands
+### Run Command
 ```bash
-dotnet clean
-dotnet build
 dotnet run
-🧪 Experiments (Question 3)
-Part B – Implementation
-Best Fit, Worst Fit, Next Fit allocation
 
-Free with adjacent block merging
 
-Fully commented to explain allocation decisions
 
-Part C – Allocation Trace
-Fixed allocation/free sequence
 
-Full free list printed after each step
+1 – Question 2 (Bitmap vs LinkedList | AI vs Rewritten)
 
-Behavioral differences clearly visible
+Runs all experiments for 4 versions:
 
-Part D – Fragmentation Test
+Bitmap (AI)
+
+Bitmap (Rewritten)
+
+Linked-list (AI)
+
+Linked-list (Rewritten)
+
+Experiments included:
+
+Speed Test (100 allocations)
+
+Fragmentation Test (20 allocs, free 5, try allocate size 12)
+
+Allocation Trace (fixed 15 allocations, prints disk state each step)
+
+Runner file: Question2/Question2Runner.cs
+Algorithms:
+
+Question2/Bitmap/*
+
+Question2/LinkedList/*
+
+2 – Question 3 Part B (Implementation Demo)
+
+Demonstrates the linked-list free-list allocator implementation:
+
+AllocateBestFit
+
+AllocateWorstFit
+
+AllocateNextFit
+
+Free + merge adjacent segments
+
+Runner file: Question3/Runners/Part_B_Runner.cs
+
+3 – Question 3 Part C (Experiment 1: Allocation Trace)
+
+Runs a fixed request sequence:
+
+[10, 5, 20, -5, 12, -10, 8, 6, 7, 3, 10]
+
+After each request (allocate/free), prints the full free list for:
+
+Best Fit
+
+Worst Fit
+
+Next Fit
+
+Runner file: Question3/Runners/Part_C_Runner.cs
+
+4 – Question 3 Part D (Experiment 2: Fragmentation Test)
+
+Fragmentation experiment:
+
 12 random allocations (size 3–12)
 
-Free exactly 4 allocated blocks
+Free exactly 4 previous blocks (randomly selected)
 
-Attempt large allocation of size 25
+Attempt one large allocation of size 25
 
-Demonstrates external fragmentation
+Fixed seeds are used for reproducibility.
 
-Part E – Speed Test
-200 iterations of allocate + free
+Runner file: Question3/Runners/Part_D_Runner.cs
 
-Execution time measured
+5 – Question 3 Part E (Experiment 3: Speed Test)
 
-Performance comparison based on list scanning behavior
+Speed experiment:
 
-📊 Results Folder
-The results directory contains console outputs used directly in the report:
+Repeat 200 iterations:
 
-part_b_output.txt
+allocate a random block (size 1–10)
 
-part_c_output.txt
+free one previously allocated block
 
-part_d_output.txt
+Measures total time for:
 
-part_e_output.txt
+Best Fit
 
-These outputs allow verification without rerunning the code.
+Worst Fit
 
-🔁 Reproducibility
-Reproducibility is ensured by:
+Next Fit
 
-Fixed random seeds
-
-Clear directory structure
-
-No external dependencies
-
-Simple build and run steps
-
-Anyone cloning this repository can reproduce the results easily.
-
-🔗 GitHub Repository Link
-👉 https://github.com/tahaefekusoglu/Operating-Systems-and-Hardware--Memory-Allocation-Algorithms-Final-Project
+Runner file: Question3/Runners/Part_E_Runner.cs
 
 
+
+
+Project Structure
+
+
+AllocationAlgorithms
+
+Program.cs
+
+Question2
+
+Bitmap
+BitmapAllocator_AI.cs
+BitmapAllocator_Rewritten.cs
+
+LinkedList
+LinkedListAllocator_AI.cs
+LinkedListAllocator_Rewritten.cs
+
+Question3
+
+Core
+Allocator.cs
+FreeSegment.cs
+AllocatorBase.cs
+BestFitAllocator.cs
+WorstFitAllocator.cs
+NextFitAllocator.cs
+
+Runners
+Part_B_Runner.cs
+Part_C_Runner.cs
+Part_D_Runner.cs
+Part_E_Runner.cs
+Question2Runner.cs
+
+
+
+
+
+Notes for Evaluation
+Reproducibility: Parts D and E use fixed random seeds so results are repeatable.
+
+No bin/obj in repository: Build artifacts are ignored via .gitignore.
+
+
+
+Troubleshooting
+
+If you get build errors:
+
+Ensure you are in the folder containing the .csproj
+
+Run:
+
+dotnet build
+dotnet run

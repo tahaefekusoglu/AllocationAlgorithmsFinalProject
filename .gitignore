@@ -1,27 +1,19 @@
-# ===============================
-# .NET / Visual Studio ignore
-# ===============================
-
+# .NET build outputs
 bin/
 obj/
 
-# User-specific files
-*.user
+# Visual Studio cache
+.vs/
 *.suo
-*.userosscache
-*.sln.docstates
+*.wsuo
 
-# Build results
-[Bb]in/
-[Oo]bj/
+# Database / cache files
+*.db
+*.cache
 
-# Rider / VS Code
-.vscode/
-.idea/
+# Backup & temp
+*.backup.json
 
-# OS files
+# OS junk
 .DS_Store
 Thumbs.db
-
-# Logs
-*.log
