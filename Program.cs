@@ -26,7 +26,7 @@ internal class Program
                 switch (choice)
                 {
                     case "1":
-                        Question2Runner.Run(); // namespace yok -> direkt çağırılır
+                        Question2Runner.Run(); 
                         break;
 
                     case "2":
