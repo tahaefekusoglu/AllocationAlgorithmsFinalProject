@@ -19,9 +19,12 @@ It includes:
 - Run from the project folder that contains `AllocationAlgorithms.csproj`
 
 ### Run Command
-```bash
-dotnet run
+Open a terminal in the project root folder (the folder that contains AllocationAlgorithms.csproj).
 
+Run the following command:
+dotnet run
+After running the program, a console menu will appear.
+You can select the desired question or experiment by entering the corresponding number, and the program will execute that part and display the results in the console.
 
 
 
